@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<div class = "container">
+		<div class="hero-unit">
+        <h1>Começar o jogo</h1><br />
+        <p>Você está prestes a iniciar o jogo!</p>
+        <p>Escolha o número de equipes participantes abaixo e logo após insira seus nomes.</p>
+        <div class = "form-wrap">
+			<form class="navbar-form pull-left">
+			  <select name = "player-number">
+			  	 <option disabled selected value> -- Escolha uma opção -- </option>
+			  	<option value = "1">1 equipe</option>
+			  	<option value = "2">2 equipes</option>
+			  	<option value = "3">3 equipes</option>
+			  	<option value = "4">4 equipes</option>
+			  	<option value = "5">5 equipes</option>
+			  	<option value = "6">6 equipes</option>
+			  </select>
+			  <!-- <input type="text" class="span2"> -->
+			  <button type="submit" class="btn btn-primary btn-large" disabled id = "game-start-btn">Começar</button>
+			</form>
+        </div><br/><br />
+      </div>
+	</div>
+{% endblock %}
+{% block javascripts %}
+	<script type="text/javascript" src = "{{ asset('/js/start.js') }}"></script>
+{% endblock %}
