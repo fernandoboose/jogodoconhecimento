@@ -1,6 +1,6 @@
 <?php
-// src/AppBundle/Entity/Player.php
-namespace AppBundle\Entity;
+// src/Game/AppBundle/Entity/Player.php
+namespace \Game\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
