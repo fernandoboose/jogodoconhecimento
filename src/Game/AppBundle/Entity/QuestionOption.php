@@ -1,6 +1,6 @@
 <?php
 // src/Game/AppBundle/Entity/QuestionOption.php
-namespace \Game\AppBundle\Entity;
+namespace Game\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
