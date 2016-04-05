@@ -12,6 +12,14 @@ use Game\AppBundle\Entity\Player;
 use Symfony\Component\HttpFoundation\Request;
 
 class GameController extends Controller {
+
+    /**
+     * @Route("/", name="index")
+     */
+    public function indexAction() {
+        return $this->render('default/index.html.twig');
+    }
+
     /**
      * @Route("/comecarjogo", name="start")
      */
