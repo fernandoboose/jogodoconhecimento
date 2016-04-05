@@ -71,11 +71,11 @@ class QuestionOption {
     /**
      * Add question
      *
-     * @param \AppBundle\Entity\Question $question
+     * @param \Game\AppBundle\Entity\Question $question
      *
      * @return QuestionOption
      */
-    public function addQuestion(\AppBundle\Entity\Question $question)
+    public function addQuestion(\Game\AppBundle\Entity\Question $question)
     {
         $this->question[] = $question;
 
@@ -85,9 +85,9 @@ class QuestionOption {
     /**
      * Remove question
      *
-     * @param \AppBundle\Entity\Question $question
+     * @param \Game\AppBundle\Entity\Question $question
      */
-    public function removeQuestion(\AppBundle\Entity\Question $question)
+    public function removeQuestion(\Game\AppBundle\Entity\Question $question)
     {
         $this->question->removeElement($question);
     }

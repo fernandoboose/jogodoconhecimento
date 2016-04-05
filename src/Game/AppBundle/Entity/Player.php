@@ -73,7 +73,7 @@ class Player {
      *
      * @return Player
      */
-    public function addGamesWon(\AppBundle\Entity\Game $gamesWon)
+    public function addGamesWon(\Game\AppBundle\Entity\Game $gamesWon)
     {
         $this->gamesWon[] = $gamesWon;
 
@@ -85,7 +85,7 @@ class Player {
      *
      * @param \AppBundle\Entity\Game $gamesWon
      */
-    public function removeGamesWon(\AppBundle\Entity\Game $gamesWon)
+    public function removeGamesWon(\Game\AppBundle\Entity\Game $gamesWon)
     {
         $this->gamesWon->removeElement($gamesWon);
     }

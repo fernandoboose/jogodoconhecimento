@@ -65,11 +65,11 @@ class Game {
     /**
      * Set winner
      *
-     * @param \AppBundle\Entity\Player $winner
+     * @param \Game\AppBundle\Entity\Player $winner
      *
      * @return Game
      */
-    public function setWinner(\AppBundle\Entity\Player $winner = null)
+    public function setWinner(\Game\AppBundle\Entity\Player $winner = null)
     {
         $this->winner = $winner;
 
@@ -79,7 +79,7 @@ class Game {
     /**
      * Get winner
      *
-     * @return \AppBundle\Entity\Player
+     * @return \Game\AppBundle\Entity\Player
      */
     public function getWinner()
     {
