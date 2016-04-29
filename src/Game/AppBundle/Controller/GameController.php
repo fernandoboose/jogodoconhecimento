@@ -28,27 +28,34 @@ class GameController extends Controller {
     }
 
     /**
-   * @Route( "/criaform", name="create_form" )
+   * @Route("/criaform/", name="create_form")
+   * @Route( "/criaform/{count}", defaults={"count" = 1},  name="create_form_count" )
    * @Template()
    */
-    public function registerAction(Request $request) {
-        $playerform = new PlayerRegister();
-        $form = $this->createForm(PlayerRegister::class, $playerform);
+    public function registerAction(Request $request, $count=1) {
+        // $playerform = new Player();
+        // $form = $this->createForm(PlayerRegister::class, $playerform, array('count' => $count));
         
-        if ( $request->isMethod( 'POST' ) ) {
-            $form->handleRequest($request);
-            if ( $form->isValid( ) ) {
-                $data = $form->getData();
-                $response['success'] = true;
-            } else{
-                $response['success'] = false;
-            }         
-            return new JsonResponse( $response );
-        }
+        // if ( $request->isMethod( 'POST' ) ) {
+        //     $form->handleRequest($request);
+        //     if ( $form->isValid( ) ) {
+        //         $data = $form->getData();
+        //         $em = $this->getDoctrine()->getManager();
+        //         $em->persist($playerform);
+        //         $em->flush();
+        //         $response['success'] = true;
+        //     } else{
+        //         $response['success'] = false;
+        //     }         
+        //     return new JsonResponse( $response );
+        // }
 
         return $this->render(
             'game/playersForm.html.twig',
-            array('form' => $form->createView())
+            array(
+                'form' => $form->createView(),
+                'count' => $count,
+            )
         );
     }
 }

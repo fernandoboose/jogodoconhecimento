@@ -1,0 +1,80 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+/*  background: url('../img/bandeira-bahia.png') no-repeat;
+  background-position: bottom;
+  background-size-x: 50%;*/
+}
+
+.bahia-flag {
+    background: url('../img/bandeira-bahia.png') no-repeat;
+    width: 118px;
+    height: 139px;
+    background-size: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 71px;
+    z-index: 1;
+}
+.form-wrap {
+  width: 35%;
+}
+
+.form-wrap div, .start .btn-lg {
+  margin-top: 15px;
+}
+
+h1 {
+  font-size: 45px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.container.index, .contact p {
+  font-size: 16px;
+}
+
+.game-search-wrap {
+  width: 50%;
+}
+
+.ranking ul {
+  margin-top: 25px;
+}
+
+.badge {
+  background-color: #003ba8;
+}
+
+.scnd {
+  margin-bottom: 39px;
+}
+
+.odd {
+  background-color: #efefef;
+}
+
+.field-wrap {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.wait {
+  display: none;
+  margin-top: 25px;
+}

@@ -1,8 +1,10 @@
 
 	{{ form_start(form) }}
-    {{ form_row(form.name) }}
+    {{ form_row(form.nickname) }}
 
     <button type="submit">Register!</button>
 {{ form_end(form) }}
+
+{{count}}
 
 	<script type="text/javascript" src = "{{ asset('/js/start.js') }}"></script>

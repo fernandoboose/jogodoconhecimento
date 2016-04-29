@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class = "container ranking">
+	<h1 class = "page-header">Ranking</h1>
+	<div class = "row">
+		<div class = "col-sm-5 col-md-6">
+			<p>Quem foi melhor? Você ou seu colega? Descubra aqui! </p>
+			<p class = "scnd">Veja quem acertou mais respostas no geral ou em partidas individuais.</p>
+			<ul class="list-group"> 
+				<li class = "list-group-item"><b>Ranking Geral</b></li>
+				<li class="list-group-item"> <span class="badge">14</span> <b>1º</b> - Jogador 3 </li> 
+				<li class="list-group-item odd"> <span class="badge">2</span> <b>2º</b> - Jogador 1 </li> 
+				<li class="list-group-item"> 	<span class="badge">1</span> <b>3º</b> - Jogador 4 </li> 
+				<li class="list-group-item odd"> 	<span class="badge">1</span> <b>4º</b> - Jogador 2 </li> 
+			</ul>
+		</div>
+		<div class = "col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
+			<p>Digite o ID da partida desejada para exibir seu resultado.</p>
+			<div class = "game-search-wrap">
+				<div class="input-group"> <input type="text" class="form-control" placeholder="Pesquisar..."> <span class="input-group-btn"> <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></button> </span> </div>
+			</div>
+			<ul class="list-group"> 
+				<li class = "list-group-item"><b>Ranking da partida</b></li>
+				<li class="list-group-item odd"> <span class="badge">14</span> <b>1º</b> - Jogador 1 </li> 
+				<li class="list-group-item"> <span class="badge">2</span> <b>2º</b> - Jogador 2 </li> 
+				<li class="list-group-item odd"> 	<span class="badge">1</span> <b>3º</b> - Jogador 3 </li> 
+			</ul>
+		</div>
+	</div>
+	<p><a href = "#">Clique aqui para ver o ranking completo.</a></p>
+</div>
+{% endblock %}

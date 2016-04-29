@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+{% block body %}
+<div class = "container contact">
+	<h1 class = "page-header">Contato</h1>
+	<p>Tem alguma dúvida ou sugestão? Nós queremos te ouvir!</p>
+	<p>Use o formulário abaixo para entrar em contato conosco.</p>
+
+	<div class = "form-wrap">
+		{{ form_start(form) }}
+    		{{ form_errors(form) }}
+
+		{{ form_end(form) }}
+	</div>
+
+</div>
+{% endblock %}
