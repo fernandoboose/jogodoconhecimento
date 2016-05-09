@@ -111,11 +111,11 @@ class QuestionOption {
     /**
      * Set correctAnswer
      *
-     * @param \boolean $correctAnswer
+     * @param $correctAnswer
      *
      * @return QuestionOption
      */
-    public function setCorrectAnswer(\boolean $correctAnswer)
+    public function setCorrectAnswer($correctAnswer)
     {
         $this->correctAnswer = $correctAnswer;
 
