@@ -1,0 +1,2 @@
+mysql --host=us-cdbr-iron-east-03.cleardb.net --user=b909ce1ed4a6d5 --password=491292e2 --reconnect heroku_96457c171adb6e1 < teste.sql
+
