@@ -22,15 +22,21 @@ class QuestionOption {
      */
 	private $desc;
 
-	/**
-     * @ORM\OneToMany(targetEntity="Question", mappedBy="question_option")
+    /**
+     * @ORM\ManyToOne(targetEntity="Question", inversedBy="questions", cascade="persist")
+     * @ORM\JoinColumn(name="question_id", referencedColumnName="id")
      */
-	private $question;
+    private $question;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $correctAnswer;
+    
     /**
      * Constructor
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->question = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -100,5 +106,52 @@ class QuestionOption {
     public function getQuestion()
     {
         return $this->question;
+    }
+
+    /**
+     * Set correctAnswer
+     *
+     * @param \boolean $correctAnswer
+     *
+     * @return QuestionOption
+     */
+    public function setCorrectAnswer(\boolean $correctAnswer)
+    {
+        $this->correctAnswer = $correctAnswer;
+
+        return $this;
+    }
+
+    /**
+     * Is this the correct answer?
+     *
+     * @return \bool
+     */
+    public function isCorrectAnswer() {
+        return $this->correctAnswer;
+    }
+
+    /**
+     * Set question
+     *
+     * @param \Game\AppBundle\Entity\Question $question
+     *
+     * @return QuestionOption
+     */
+    public function setQuestion(\Game\AppBundle\Entity\Question $question = null)
+    {
+        $this->question = $question;
+
+        return $this;
+    }
+
+    /**
+     * Get correctAnswer
+     *
+     * @return boolean
+     */
+    public function getCorrectAnswer()
+    {
+        return $this->correctAnswer;
     }
 }

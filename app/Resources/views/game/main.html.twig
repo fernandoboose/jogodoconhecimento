@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<div class = "container main-control">
+		<h3 class = "inline-block">Jogador da vez: {{activePlayer}}</h3>
+		<div class="btn btn-primary float-right inline-block logout" id="game-start-btn">Encerrar Jogo</div>
+
+		<div class = "jumbotron">
+			<div class = "row">
+				<div class = "col-sm-5 col-md-6">
+					<div class = "question-wrap"></div>
+					<button class="btn btn-primary send" disabled>Enviar resposta</button>
+				</div>
+				<div class = "col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
+					<h4 class = "text-right">Partida #{{game}}</h4>
+					<div class = "ranking-wrap"></div>
+					<div class = "help-wrap text-right">
+						<!-- <div class="btn btn-primary" id="game-start-btn">Pedir Ajuda (3 restantes)</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% block javascripts %}
+	<script type="text/javascript" src = "{{ asset('/js/main.js') }}"></script>
+{% endblock %}

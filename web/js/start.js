@@ -1,48 +1,44 @@
-// $('document').ready(function(){
-// 	$('select[name="player-number"]').change(function(){
-// 		var val = $(this).val();
-// 		if(val > 1) {
-// 			$(".players-form-wrap").load("/criaform/"+val);
-// 		} else {
-// 			$(".players-form-wrap").load("/criaform/");
-// 		}
-
-//         $.ajax({
-//             url: '/criaform',
-//             data: { jogadores: val },
-//             success: function(result) {
-//                 // TODO:
-//             }
-//         });		
-// 		// $('#game-start-btn').removeAttr('disabled');
-// 	});
-// });
-
 $('document').ready(function(){
-	$('select[name="player-number"]').change(function(){
-		var val = $(this).val();
-		$('#players-form .inputs').html('');
-		for(i=1; i <= val; i++) {
-			$('#players-form .inputs').append('<div class = "field-wrap"><label for = "player'+i+'">Jogador '+i+'</label><input type = "text" class = "form-control" name = "player'+i+'"></div>');
-		}
-	});
+	var $collectionHolder;
 
-	$(document.body).on("blur", 'input', function(){
-		var erros = 0;
-		$('.field-wrap input[type="text"]').each(function(){
-			if($(this).val() == '') {
-				erros = erros + 1;
-			}
-		});
-		if(erros == 0) {
-			console.log('aaa');
-			$('#game-start-btn').removeAttr('disabled');
-		} else {
-			$('#game-start-btn').attr('disabled', 'disabled');
-		}
-	});
+	// setup an "add a tag" link
+	var $addTagLink = $('<a href="#" class="add_tag_link">Clique aqui para adicionar uma nova equipe.</a>');
+	var $newLinkLi = $('<li></li>').append($addTagLink);
 
-	$('#game-start-btn').click(function(){
-		$('.wait').fadeIn('slow');
+	 $collectionHolder = $('#game_players');
+
+    // add the "add a tag" anchor and li to the tags ul
+    $collectionHolder.append($newLinkLi);
+
+    // count the current form inputs we have (e.g. 2), use that as the new
+    // index when inserting a new item (e.g. 2)
+    $collectionHolder.data('index', $collectionHolder.find(':input').length);
+
+    $addTagLink.on('click', function(e) {
+        // prevent the link from creating a "#" on the URL
+        e.preventDefault();
+
+        // add a new tag form (see next code block)
+        addGameForm($collectionHolder, $newLinkLi);
 	});
 });
+
+function addGameForm($collectionHolder, $newLinkLi) {
+    // Get the data-prototype explained earlier
+    var prototype = $collectionHolder.data('prototype');
+
+    // get the new index
+    var index = $collectionHolder.data('index');
+    if(index == 0) index = 1;
+
+    // Replace '__name__' in the prototype's HTML to
+    // instead be a number based on how many items we have
+    var newForm = prototype.replace(/__name__/g, index);
+
+    // increase the index with one for the next item
+    $collectionHolder.data('index', index + 1);
+
+    // Display the form in the page in an li, before the "Add a tag" link li
+    var $newFormLi = $('<li></li>').append(newForm);
+    $newLinkLi.before($newFormLi);
+}

@@ -44,7 +44,6 @@ public function contactAction(Request $request)
     $form->handleRequest($request);
 
     if ($form->isValid()) {
-        // data is an array with "name", "email", and "message" keys
         $data = $form->getData();
     }
 

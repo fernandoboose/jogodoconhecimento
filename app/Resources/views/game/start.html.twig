@@ -5,29 +5,11 @@
 		<div class="jumbotron">
         <h1>Começar o jogo</h1><br />
         <p>Você está prestes a iniciar o jogo! :)</p>
-        <p>Escolha o número de equipes participantes abaixo e logo após insira seus nomes.</p>
         <div class = "form-wrap">
-			<form>
-			  <select name = "player-number" class = "form-control">
-			  	 <option disabled selected value> -- Escolha uma opção -- </option>
-			  	<option value = "1">1 equipe</option>
-			  	<option value = "2">2 equipes</option>
-			  	<option value = "3">3 equipes</option>
-			  	<option value = "4">4 equipes</option>
-			  	<option value = "5">5 equipes</option>
-			  	<option value = "6">6 equipes</option>
-			  </select>
-			</form>
-        </div><br/><br />
-        <div class = "players-form-wrap">
-        	<form id = "players-form">
-        		<div class = "inputs">
-
-        		</div>
-        	</form>
+			{{ form_start(form, {'attr': {'class': 'start-form'}}) }}
+				{{ form_widget(form) }}
+			{{ form_end(form) }}
         </div>
-        <button type="submit" class="btn btn-primary btn-lg" disabled id = "game-start-btn">Começar</button>
-        <div class="alert alert-danger wait" role="alert"><b>Atenção!</b> O jogo ainda não está pronto. Volte em breve.</div>
       </div>
 	</div>
 {% endblock %}
