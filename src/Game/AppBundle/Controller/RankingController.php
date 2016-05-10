@@ -20,7 +20,7 @@ class RankingController extends Controller {
     	$session = $request->getSession();
         $session->clear();
     	$em = $this->getDoctrine()->getManager();
-		$gamePlayers = $em->getRepository('Game\AppBundle\Entity\GamePlayer')->findBy(array(), array('points' => 'DESC'));
+		$gamePlayers = $em->getRepository('Game\AppBundle\Entity\GamePlayer')->findBy(array(), array('points' => 'DESC'), 30);
 
         return $this->render('ranking/list.html.twig', array(
         	'gamePlayers' => $gamePlayers,
