@@ -32,25 +32,6 @@
     {% set currentPath = path(app.request.attributes.get('_route'),
                  app.request.attributes.get('_route_params')) %}
     <body>
-    <!-- <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="#">Jogo do Milhão</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li {% if currentPath == '/' %}class="active" {% endif %}><a href="/">Página Inicial</a></li>
-              <li {% if currentPath == '/comecarjogo' %}class="active" {% endif %}><a href="comecarjogo">Jogar</a></li>
-              <li {% if currentPath == '/ranking' %}class="active" {% endif %}><a href="/ranking">Ranking</a></li>
-              <li {% if currentPath == '/como-jogar' %}class="active" {% endif %}><a href="/como-jogar">Como o jogo funciona?</a></li>
-              <li {% if currentPath == '/contato' %}class="active" {% endif %}><a href="/contato">Fale Conosco</a></li>
-            </ul>
-          </div>
-        </div>
-    </div>        --> 
     <body>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
