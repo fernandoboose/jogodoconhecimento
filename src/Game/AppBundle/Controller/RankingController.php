@@ -16,8 +16,25 @@ class RankingController extends Controller {
 	/**
      * @Route("/ranking", name="listRanking")
      */
-    public function listRankingAction() {
-        return $this->render('ranking/list.html.twig');
+    public function listRankingAction($gameId=null) {
+    	$em = $this->getDoctrine()->getManager();
+		$gamePlayers = $em->getRepository('Game\AppBundle\Entity\GamePlayer')->findBy(array(), array('points' => 'DESC'));
+
+        return $this->render('ranking/list.html.twig', array(
+        	'gamePlayers' => $gamePlayers,
+		));
     }
+        /**
+         * @Route("/ranking/{gameId}", name="listRankingByGame")
+        */
+        public function listGameRankingAction($gameId) {
+        	$em = $this->getDoctrine()->getManager();
+        	$gamePlayers = $em->getRepository('Game\AppBundle\Entity\GamePlayer')->findBy(array('game' => $gameId), array('points' => 'DESC'));
+
+        	return $this->render('ranking/listGame.html.twig', array(
+        		'gamePlayers' => $gamePlayers,
+        		'gameId' => $gameId
+    		));
+        }	
 }
 ?>

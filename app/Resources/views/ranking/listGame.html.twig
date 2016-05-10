@@ -1,0 +1,6 @@
+<ul class="list-group"> 
+	<li class = "list-group-item"><b>Ranking da partida #{{gameId}}</b></li>
+	{% for gamePlayer in gamePlayers %}
+	<li class="list-group-item"> <span class="badge">{{gamePlayer.points}}</span> <b>{{loop.index}}º</b> - {{gamePlayer.player.nickname}} </li> 
+	{% endfor %}
+</ul> 
