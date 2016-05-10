@@ -16,7 +16,9 @@ class RankingController extends Controller {
 	/**
      * @Route("/ranking", name="listRanking")
      */
-    public function listRankingAction($gameId=null) {
+    public function listRankingAction($gameId=null, Request $request) {
+    	$session = $request->getSession();
+        $session->clear();
     	$em = $this->getDoctrine()->getManager();
 		$gamePlayers = $em->getRepository('Game\AppBundle\Entity\GamePlayer')->findBy(array(), array('points' => 'DESC'));
 
