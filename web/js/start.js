@@ -17,10 +17,18 @@ $('document').ready(function(){
     $addTagLink.on('click', function(e) {
         // prevent the link from creating a "#" on the URL
         e.preventDefault();
+        $('#game_save').removeAttr('disabled');
 
         // add a new tag form (see next code block)
         addGameForm($collectionHolder, $newLinkLi);
 	});
+
+    $(document.body).on('click', '#game_save', function(e){
+        if($('input[type=text]').length == 0) {
+            e.preventDefault();
+        }
+    });
+
 });
 
 function addGameForm($collectionHolder, $newLinkLi) {

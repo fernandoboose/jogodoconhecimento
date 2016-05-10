@@ -40,7 +40,10 @@ class GameController extends Controller {
 
         $form = $this->createForm(GameType::class, $game)
         ->add('save', SubmitType::class, array('label' => 'Continuar', 
-                                                'attr' => array('class' => 'btn btn-primary btn-lg')));
+                                                'attr' => array(
+                                                    'class' => 'btn btn-primary btn-lg',
+                                                    'disabled' => 'disabled',
+                                                    )));
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
