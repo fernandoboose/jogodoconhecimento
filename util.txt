@@ -1,6 +1,0 @@
-mysql --host=us-cdbr-iron-east-03.cleardb.net --user=b909ce1ed4a6d5 --password=491292e2 --reconnect heroku_96457c171adb6e1 < teste.sql
-
-mysql -u b909ce1ed4a6d5 -p491292e2 -h us-cdbr-iron-east-03.cleardb.net heroku_96457c171adb6e1 -e "drop database heroku_96457c171adb6e1"
-
-mysql -u b909ce1ed4a6d5 -p491292e2 -h us-cdbr-iron-east-03.cleardb.net -e "create database heroku_96457c171adb6e1"
-
